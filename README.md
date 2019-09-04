@@ -225,6 +225,7 @@ Follow the steps below:
 
 ```Shell
 # In your main project:
+npm build
 npm link
 # In another project, use it:
 npx create-react-app dummy-client
