@@ -12,15 +12,13 @@
     "lint": "pretty-quick --staged && eslint src/ --fix && git add .",
     "start:dev": "webpack-dev-server --watch --config ./webpack.config.dev.js",
     "build:debug": "webpack --mode production --colors --devtool source-map",
-    "analizedependences": "source-map-explorer 'build/*.js'",
-    "precommit": "lint-staged"
+    "analizedependences": "source-map-explorer 'build/*.js'"
   },
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "pretty-quick --staged",
-      "eslint src/ --fix",
-      "git add"
-    ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn build && yarn lint",
+      "pre-push": "yarn test"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
