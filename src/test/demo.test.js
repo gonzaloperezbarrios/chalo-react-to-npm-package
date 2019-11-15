@@ -1,4 +1,4 @@
-import Sum from "../utils/main";
+import Sum from "../utils/sumBusiness";
 
 test("adds 1 + 2 to equal 3", () => {
   expect(Sum(1, 2)).toBe(3);

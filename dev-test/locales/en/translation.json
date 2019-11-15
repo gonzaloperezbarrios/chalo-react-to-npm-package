@@ -1,0 +1,101 @@
+{
+  "reportMenu": {
+    "batch": "Batch Report",
+    "detailsChecks": "Check Details",
+    "returnChecks": "Returned Checks",
+    "audit": "Audit Report"
+  },
+  "auditReport": {
+    "from": "From",
+    "to": "To",
+    "amount": "Amount",
+    "generateReport": "GENERATE REPORT",
+    "processed": "Processed",
+    "maker": "Maker",
+    "user": "User",
+    "reason": "Reason",
+    "checkNumber": "Check Number",
+    "checkDetails": "Check Details",
+    "status": "Status",
+    "next": "Next",
+    "transit": "Transit",
+    "account": "Account",
+    "clearingDate": "Clearing Date",
+    "print": "PRINT",
+    "save": "SAVE",
+    "items": "ITEMS",
+    "totalAmount": "TOTAL AMOUNT",
+    "exportResults": " EXPORT RESULTS",
+    "exportImages": "EXPORT IMAGES",
+    "checksPerPage": "Checks per page",
+
+    "phEmail": "Enter an e-mail.",
+    "confirmDownload": "Confirm Download",
+    "messageDownload": "This process can take several minutes. Plase enter a valid email to us send this report.",
+    "send": "SEND",
+    "close": "CLOSE",
+
+    "msgWithOutInformation": "We did not find anything with that search criteria.  Please change the change criteria and try again.",
+    "msgWithOutFromDate": "A date is required for the from date. Please enter a from date.",
+    "msgWithOutToDate": "A date is required for the end date. Please enter an end date.",
+    "msgToDateGreaterCurrentDate": "The end date cannot be higher than today's date.  Please correct the end date",
+    "msgFromGreaterToDate": "The from date cannot be higher than the end date.  Please correct the from date.",
+    "msgDatesGreaterthanAYear": "The interval between from and to date cannot be greater a year.",
+
+    "msgEmailRequired": "The email is required, Please enter the email.",
+    "msgEmailWrong": "The email is wrong, could you validate.",
+    "msgGenerationReport": "We are building the report, when we finishe we send you a link in your email to download it. You can continue working in viacheck."
+  },
+  "returnedChecksReport": {
+    "from": "From",
+    "to": "To",
+    "reason": "Reason",
+    "user": "User",
+    "agency": "Agency",
+    "generateReport": "GENERATE REPORT",
+    "exportResults": " EXPORT RESULTS",
+    "checksPerPage": "Checks per page",
+
+    "tableHeadProcess": "Process",
+    "tableHeadReturned": "Returned",
+    "tableHeadNumberCheck": "Number Check",
+    "tableHeadCount": "Count",
+    "tableHeadPath": "Path",
+    "tableHeadReason": "Reason",
+    "tableHeadAmount": "Amount",
+
+    "totalAmount": "TOTAL AMOUNT (TEST LOCAL)",
+    "checkNumber": "Number Check",
+    "checkDetails": "Check Details",
+    "next": "Next",
+    "fee": "Fee",
+
+    "msgWithOutInformation": "We did not find anything with that search criteria.  Please change the change criteria and try again.",
+    "msgWithOutFromDate": "A date is required for the from date. Please enter a from date.",
+    "msgWithOutToDate": "A date is required for the end date. Please enter an end date.",
+    "msgToDateGreaterCurrentDate": "The end date cannot be higher than today's date.  Please correct the end date",
+    "msgFromGreaterToDate": "The from date cannot be higher than the end date.  Please correct the from date.",
+
+    "msgNotData": "Data not found.",
+    "msgAgencyInitial": "All",
+    "msgUserInitial": "All",
+    "msgReasonInitial": "All",
+
+    "headCSVProcess": "Process",
+    "headCSVReturned": "Returned",
+    "headCSVNumberCheck": "Number Check",
+    "headCSVUser": "User",
+    "headCSVAgency": "Agency",
+    "headCSVAmount": "Amount",
+    "headCSVReason": "Reason",
+    "headCSVCount": "Count",
+    "headCSVPath": "Path",
+    "headCSVFee": "Fee"
+  },
+  "paginationComponent": {
+    "first": "First",
+    "before": "Previous",
+    "next": "Next",
+    "last": "Last"
+  }
+}

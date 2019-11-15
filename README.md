@@ -1,4 +1,4 @@
-# Welcome to React to npm-package!
+# Welcome to base-project-npm-package!
 
 > Hi! It's a guide where you going to can know how packaging project React, build and publish in a repository npm.
 
@@ -14,6 +14,8 @@ These guide will show the following topics:
 - Explains some advice for good practice, so like:
   - Code coverage.
   - How to make tests.
+  - How to work with development environments
+  - Frequent conflicts
 
 ## Structure directory
 
@@ -50,15 +52,13 @@ The dynamic is, configuring the project with:
    {
   "private": false, // If your application is access to public or private.
   "name": "@demo/aplicattion", // Name of the application, if use @name indicated it's a company repository.
-  "version": "1.0.4", // Number version.
+  "version": "1.0.5", // Number version.
   "description": "A React component ...", // It's description your application.
   "main": "build/index.js", // Location the build your application.
-  "peerDependencies": {
-    "react": "^16.8.3" // Indicates that the project requires React.
-  },
   "scripts": {
     "test": "jest", // Run all test.
-    "start": "webpack --watch --mode development", // It will generate compilation and execution in development mode.
+    "start": "webpack --watch --mode development --devtool inline-source-map", // It will generate compilation and execution in development mode.
+    "start:source": "webpack --watch --mode development --devtool inline-source-map", // It will generate compilation and execution in development mode, Use it when you need coding with source map and debugger options
     "build": "webpack --mode production", // It will generate compilation and execution in production mode.
     "precommit": "lint-staged", // It will validate the quality of code before git commit.
     "lint": "eslint .", // It will validate the quality of code before build.
@@ -90,12 +90,27 @@ The dynamic is, configuring the project with:
   "author": "xxxx xxxx", // Name author.
   "license": "ISC", // Type license.
   // They are the packages required and minimum for work the application with React.
+
   // You can install all the packages you need here. **(npm install <package>)**
   "dependencies": {
     "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "webpack": "^4.12.0"
+    "react-dom": "^16.8.3"
   },
+  // Note:
+  // "peerDependencies are a special type of dependency that is only
+  // needed if you are publishing your package.
+  // Having a peer dependency means that your package needs a
+  // dependency that is exactly the same dependency as the person
+  // installing your package. This is useful for packages such as
+  // react that need to have a single copy of react-dom that
+  // is also used by the person installing your package".
+  // You should copy all dependency packages here.
+  // That solves compatibility problems and asks first if the father already has them installed.
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
+  },
+
   // They are the packages required and minimum for work the application with React in development mode.
   // So, these packages is not will install in production mode.
   "devDependencies": {
@@ -128,6 +143,7 @@ The dynamic is, configuring the project with:
     "react-test-renderer": "^16.9.0",
     "style-loader": "^1.0.0",
     "url-loader": "^2.1.0",
+    "webpack": "^4.12.0",
     "webpack-cli": "^3.3.7"
   }
 }
@@ -167,6 +183,15 @@ module.exports = {
     filename: "index.js",
     libraryTarget: "commonjs2"
   },
+  // WARNING! Only use this resolve configuration if peerDependencies fail to solve it (in theory this works the as peerDependencies).
+  resolve: {
+    extensions: [".js", ".jsx"],
+    alias: {
+      react: path.resolve("./node_modules/react"),
+      "react-dom": path.resolve("./node_modules/react-dom"),
+      "react-i18next": path.resolve("./node_modules/react-i18next")
+    }
+  },
   module: {
     // This rule, it read the files .js
     rules: [
@@ -199,6 +224,7 @@ module.exports = {
       }
     ]
   },
+  // Here copy external dependencies for the package is lighter
   externals: {
     react: "commonjs react"
   }
@@ -212,6 +238,16 @@ Follow the steps below:
 - npm login
 - npm build
 - npm publish or npm publish --scope=organization name
+- "--scope": is only necessary if the package name in the package.json file does not have the company name as a prefix. Always the company name must be with the "@-2 at the beginning and a separator "/" at the end in the package.json file: @company/demo-react-to-npm-package
+
+```Json5
+   {
+  	"name": "@company/demo-react-to-npm-package",
+  		....
+  }
+```
+- npm unpublish --scope=company --force
+- npm publish --scope=company
 
 ## Good practices
 
@@ -223,11 +259,100 @@ Follow the steps below:
   **Example Windows**
   This creates a symbolic connection between two projects. https://docs.npmjs.com/cli/link
 
+## How to work with development environments
+
+##### If you are going to deploy in production
+
 ```Shell
-# In your main project:
+# In your package project:
 npm build
-npm link
-# In another project, use it:
-npx create-react-app dummy-client
-npm link <name main project>
+npm publish
+# Remember the company name in the package.json or --scope in npm command
+
+# In the contnent project:
+npm install @company_name/package_name # If is a private business package
+npm install package_name # If is a public business package
 ```
+
+##### If you are going to deploy in development mode
+
+```Shell
+
+npm run debug # If you want to run development mode with source_map, you can use this command if you are going to work with a debugger
+
+npm run build # create the bundles/package in production mode
+
+npm run test # If you want to unit test with a watcher.
+
+npm run test:w # If you want to unit test without a watcher.
+
+npm run lint # The system apply linter to the code
+
+npm run start:dev # If you want to raise a development server to try in a web browser.
+
+npm run build:debug # create the bundles/package in production mode with a map necesary to run the next command
+
+npm run analizedependences # run a plugin that show the weight of each package inside you package, you can see an example on 'Validate weight of package' section.
+
+npm link # This command will make a package works locally in your PC as temp package.
+
+# In the contnent project:
+npm link package_name # It's the same as running npm i package_name
+
+```
+
+- When you finish testing in development, remember to remove the npm link
+
+```Shell
+# In the content project
+npm unlink package_name
+
+# In the package project
+npm unlink
+```
+
+## Validate weight of package
+
+you can run the next commands to see the result of the bundle :
+
+- `npm run build:debug`
+- `npm run analizedependences`
+
+![Result](doc/resultdependences.png)
+
+
+## Frequent conflicts
+
+#### When you get "Invalid hooks call" error on development using link
+
+If you are trying to test your package with hooks using npm link, maybe you can get the following error:
+![InvalidHooks](doc/hooks.png)
+
+To solve that, you must follow the next steps:
+
+1. unlink the package project from content project
+2. run npm link ../contentproject/node_modules/react from package project
+3. build package project
+4. link again the package project from content project
+   more info : https://reactjs.org/warnings/invalid-hook-call-warning.html#duplicate-react
+5. Another possible solution is to run the project in development mode, like this: **yarn start: dev**
+
+#### When you get an error with npm link
+
+> When working with the components, keep in mind the following conflicts:
+
+**1. Conflict:**
+
+> A developing A package cannot be called (via npm link) to another developing B package.
+
+**Solution:**
+
+> Finish a package A first and publish it in the npm account (npm publish --scope = company) and in package B that is in development you are installed package A already published (npm and package A)
+
+**2. Conflict:**
+
+> If you are using the “base package” with the multilanguage functionality, you cannot “link” to the B package in development.
+
+**Solution**
+
+> Apply the same solution from the previous point.

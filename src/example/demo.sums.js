@@ -9,7 +9,21 @@ class SumsDemo extends Component {
   }
 
   render() {
-    return <Demo inputA={2} inputB={3} />;
+    return (
+      <Demo
+        inputA={1}
+        inputB={20}
+        // (Required)
+        // Translate to English
+        // language="en"
+        // (Required)
+        // Translate to Spanish
+        language="es"
+        // (Required)
+        // Language Package
+        languageURL="http://projectv-languages.s3-website-us-east-1.amazonaws.com"
+      />
+    );
   }
 }
 

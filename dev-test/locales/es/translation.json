@@ -1,0 +1,101 @@
+{
+  "reportMenu": {
+    "batch": "Reporte de Batch",
+    "detailsChecks": "Detalles del Cheque",
+    "returnChecks": "Cheques Retornados",
+    "audit": "Reporte de Auditoria"
+  },
+  "auditReport": {
+    "from": "Desde",
+    "to": "Hasta",
+    "amount": "Valor",
+    "generateReport": "GENERAR REPORTE",
+    "processed": "Procesado",
+    "maker": "Pagador",
+    "user": "Usuario",
+    "reason": "Tipo de Cheque",
+    "checkNumber": "Número de Cheque",
+    "checkDetails": "Detalles del Cheque",
+    "status": "Estado",
+    "next": "Siguiente",
+    "transit": "Ruta",
+    "account": "Cuenta",
+    "clearingDate": "Fecha de Pago",
+    "print": "IMPRIMIR",
+    "save": "GUARDAR",
+    "items": "NÚMERO DE CHEQUES",
+    "totalAmount": "VALOR TOTAL",
+    "exportResults": " EXPORTAR RESULTADOS",
+    "exportImages": "EXPORTAR IMÁGENES",
+    "checksPerPage": "Cheques por página",
+
+    "phEmail": "Ingrese un correo electrónico.",
+    "confirmDownload": "Confirmar Descarga",
+    "messageDownload": "Este proceso puede tomar varios minutos. Por favor indique un correo electrónico en el cual desee recibir el reporte.",
+    "send": "ENVIAR",
+    "close": "CERRAR",
+
+    "msgWithOutInformation": "No hay información con estos filtros. Por favor cambie los filtros de búsqueda y vuelva a intentarlo",
+    "msgWithOutFromDate": "La fecha desde es requerida. Por favor ingrese una fecha de inicio.",
+    "msgWithOutToDate": "La fecha hasta es requerida. Por favor ingrese una fecha de finalización.",
+    "msgToDateGreaterCurrentDate": "La fecha hasta no puede ser mayor a la fecha actual. Por favor corrija la fecha hasta",
+    "msgFromGreaterToDate": "La fecha desde no puede ser mayor a la fecha hasta. Por favor corrija la fecha desde.",
+    "msgDatesGreaterthanAYear": "No es posible obtener la información de más de un año.",
+
+    "msgEmailRequired": "Usted debe ingresar un correo electrónico",
+    "msgEmailWrong": "Por favor valide el correo electrónico ingresado",
+    "msgGenerationReport": "El reporte está siendo generado, enviaremos un link para su descarga a su correo electrónico, usted puede continuar trabajando."
+  },
+  "returnedChecksReport": {
+    "from": "Desde",
+    "to": "Hasta",
+    "reason": "Motivo",
+    "user": "Usuario",
+    "agency": "Agencia",
+    "generateReport": "GENERAR REPORTE",
+    "exportResults": " EXPORTAR RESULTADOS",
+    "checksPerPage": "Cheques por página",
+
+    "tableHeadProcess": "Procesado",
+    "tableHeadReturned": "Retornado",
+    "tableHeadNumberCheck": "Número de Cheque",
+    "tableHeadCount": "Cuenta",
+    "tableHeadPath": "Ruta",
+    "tableHeadReason": "Motivo",
+    "tableHeadAmount": "Valor",
+
+    "totalAmount": "VALOR TOTAL (PRUEBA LOCAL)",
+    "checkNumber": "NÚMERO DE CHEQUES",
+    "checkDetails": "Detalles del Cheque",
+    "next": "Siguiente",
+    "fee": "Cargo",
+
+    "msgWithOutInformation": "No hay información con estos filtros. Por favor cambie los filtros de búsqueda y vuelva a intentarlo",
+    "msgWithOutFromDate": "La fecha desde es requerida. Por favor ingrese una fecha de inicio.",
+    "msgWithOutToDate": "La fecha hasta es requerida. Por favor ingrese una fecha de finalización.",
+    "msgToDateGreaterCurrentDate": "La fecha hasta no puede ser mayor a la fecha actual. Por favor corrija la fecha hasta.",
+    "msgFromGreaterToDate": "La fecha desde no puede ser mayor a la fecha hasta. Por favor corrija la fecha desde.",
+
+    "msgNotData": "Datos no encontrados.",
+    "msgAgencyInitial": "Todos",
+    "msgUserInitial": "Todos",
+    "msgReasonInitial": "Todos",
+
+    "headCSVProcess": "Procesado",
+    "headCSVReturned": "Retornado",
+    "headCSVNumberCheck": "Número del cheque",
+    "headCSVUser": "Usuario",
+    "headCSVAgency": "Agencia",
+    "headCSVAmount": "Valor",
+    "headCSVReason": "Motivo",
+    "headCSVCount": "Cuenta",
+    "headCSVPath": "Ruta",
+    "headCSVFee": "Comisión"
+  },
+  "paginationComponent": {
+    "first": "Primero",
+    "before": "Anterior",
+    "next": "Siguiente",
+    "last": "Último"
+  }
+}
