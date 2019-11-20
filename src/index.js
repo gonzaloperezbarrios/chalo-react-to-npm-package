@@ -1,10 +1,11 @@
 // Add the following lines for multi-languages
 import { withTranslation } from "react-i18next";
-import "./utils/language/i18n";
+import "./core/utils/language/i18n";
 // END  multi-languages
-import mainT from "./utils/main";
+import mainT from "./core/main";
 import PropTypes from "prop-types";
 import "./styles/demo.css";
+import "./styles/style.scss";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////multi-languages//////////////////////////////////////////////////
@@ -36,5 +37,10 @@ Demo.propTypes = {
   language: PropTypes.oneOf(["en", "es"]),
   languageURL: PropTypes.string.isRequired
 };
+
+Demo.defaultProps = {
+  language: "en"
+};
+
 // add to 'withTranslation' for multi-languages
 export default withTranslation()(Demo);

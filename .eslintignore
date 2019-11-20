@@ -1,6 +1,7 @@
 /build
 /node_modules
-/src/example
+*/example
+/src/core/utils/language/example
 /src/test
 /src/index.js
-/src/utils/language/example
+example.*.js

@@ -2,3 +2,9 @@
   font-weight: 600;
   color: #10910e;
 }
+.demo-image {
+  width: 140px;
+  border-radius: 100%;
+  display: block;
+  text-align: center;
+}

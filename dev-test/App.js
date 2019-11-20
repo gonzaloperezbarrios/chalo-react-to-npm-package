@@ -9,7 +9,7 @@ ReactDOM.render(
       inputB={20}
       language="es"
       // language="es"
-      // languageURL="http://projectv-languages.s3-website-us-east-1.amazonaws.com"
+      // languageURL="http://package-languages.com"
       languageURL=""
     />
   </Suspense>,

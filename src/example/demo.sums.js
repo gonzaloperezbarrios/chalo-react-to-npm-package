@@ -21,7 +21,7 @@ class SumsDemo extends Component {
         language="es"
         // (Required)
         // Language Package
-        languageURL="http://projectv-languages.s3-website-us-east-1.amazonaws.com"
+        languageURL=""
       />
     );
   }

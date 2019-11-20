@@ -17,12 +17,20 @@ module.exports = {
         use: ["babel-loader"]
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        loader: ["file-loader", "url-loader"]
-      },
-      {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
+        test: /\.(png|jpe?g|gif)([\?]?.*)$/,
+        loader: "file-loader?name=assets/images/[name].[ext]"
+      },
+      {
+        test: /\.(svg|woff|woff2|ttf|eot|otf)([\?]?.*)$/,
+        loader: "file-loader?name=assets/fonts/[name].[ext]"
       }
     ]
   },
